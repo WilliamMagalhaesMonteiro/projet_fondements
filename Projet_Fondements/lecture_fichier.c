@@ -19,6 +19,7 @@ void affiche_objet(OBJET obj){	// Affiche tous les champs d'un objet
 void affiche_dataset(OBJET *dataset){
 
 	for (int i = 0; i < 50; i++){
+		printf("Candidat n°%d\n", i+1);
 		affiche_objet(dataset[i]);
 	}
 }
