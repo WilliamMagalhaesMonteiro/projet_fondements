@@ -10,15 +10,21 @@
 
 int main(){
 
-
-file_to_objet(PATH);
-
-// Découper la ligne : [Adrian|9|4|7|10|Serpentar] 
-// et ensuite remplir un objet avec
+OBJET *dataset = malloc(sizeof(OBJET) * 50);
+file_to_objet(PATH, dataset);
+affiche_dataset(dataset);
 
 
 
 
+
+for (int i = 0; i< 50; i++){
+    free(dataset[i].nom);
+    free(dataset[i].maison);
+}
+
+
+free(dataset);
 
 
 return 0;

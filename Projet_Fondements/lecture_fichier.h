@@ -14,5 +14,6 @@ typedef struct objet OBJET;
 
 
 void affiche_objet(OBJET obj);
+void affiche_dataset(OBJET *dataset);
 OBJET ln_to_objet(char *ligne);
-OBJET file_to_objet(char *path);
+void file_to_objet(char *path, OBJET *dataset);

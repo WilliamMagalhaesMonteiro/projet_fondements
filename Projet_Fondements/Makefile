@@ -3,8 +3,8 @@ run: compil
 
 compil: main.c lecture_fichier.c
 
-	gcc -Wall -c lecture_fichier.c
-	gcc lecture_fichier.o main.c
+	gcc -Wall -c  -g lecture_fichier.c
+	gcc  -g lecture_fichier.o main.c
 
 
 make clean:
