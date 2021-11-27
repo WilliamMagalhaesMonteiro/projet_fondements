@@ -1,4 +1,6 @@
 #include "lecture_fichier.h"
+#include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
 #define PATH "/home/user/Bureau/Projet_Fondements/choixpeauMagique.csv"
 
@@ -8,18 +10,16 @@
 
 int main(){
 
-FILE *f;
-f = fopen(PATH,"r");
 
-/*
-char carac;
-for (int i = 0; i < 1000; i++){
-	fscanf(f,"%c", &carac);
-	printf("%c", carac);
-}
-*/
+file_to_objet(PATH);
 
-read_line(f);
+// Découper la ligne : [Adrian|9|4|7|10|Serpentar] 
+// et ensuite remplir un objet avec
+
+
+
+
+
 
 return 0;
 }
