@@ -78,10 +78,17 @@ OBJET ln_to_objet(char *ligne) // Prend une ligne de caractères et renvoie un o
 	return obj;
 }
 
-void file_to_objet(char *path, OBJET *dataset) // Prend le PATH du .csv et renvoie le tableau d'objets
+int file_to_objet(char *path, OBJET *dataset) // Prend le PATH du .csv et renvoie le tableau d'objets
 { 
 	FILE *f;
 	f = fopen(path, "r");
+	
+	if (!f)
+	{
+		printf("Erreur dans l'ouverture du fichier");
+		exit(1);
+	}
+	
 
 	char buff[1024];
 	fgets(buff, 1024, f); // On fait un fgets dans le vide pour enlever l'en-tête des colonnes
@@ -100,5 +107,6 @@ void file_to_objet(char *path, OBJET *dataset) // Prend le PATH du .csv et renvo
 	}*/
 
 	fclose(f);
+	return 0;
 }
 
