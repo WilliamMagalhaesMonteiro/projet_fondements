@@ -1,5 +1,5 @@
 run: compil
-	./a.out
+	./a.out 5
 
 compil: main.c lecture_fichier.c pam.c
 
