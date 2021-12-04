@@ -1,11 +1,17 @@
 #include "lecture_fichier.h"
+
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
 #define PATH "choixpeauMagique.csv"
 
 
+// Le but de l'algo est le suviant:
 
+// Calcul de la matrice de déprart:
+// On a K éléments représentatifs
+// On Calcule la distance d'un élément par ex Adrian à chacun des K éléments représentatif
+// On associe Adrian à l'élément dont il est le plus proche
 
 
 int main(int argc, char *argv[]){
@@ -23,24 +29,51 @@ int main(int argc, char *argv[]){
     }
 
 
-OBJET *dataset = malloc(sizeof(OBJET) * 50);
+OBJET *dataset = malloc(sizeof(OBJET) * 50);    // Dataset de toutes les données (les 50 élèves)
 file_to_objet(PATH, dataset);
-
 
 printf("k : %d\n", k);
 
-OBJET *seed = malloc(sizeof(OBJET) * k);
-dataset_to_seed(k,dataset,seed);
+OBJET *seed = malloc(sizeof(OBJET) * k);        // Graine de k clusters
 
 
-// Le but de l'algo est le suviant:
-// Prendre un objet au pif qui n'est pas l'objet représentatif
-// On calcule toutes les distances à cet objet
-// Si Cette configuration est meilleure que celle avec l'objet représentatif acutel on fait l'échange sinon non
-// on fait ça pour touts les objest.
+OBJET * T = malloc(sizeof(OBJET) * (50 - k) ); // Vecteur colonne contenant exclusivement les éléments non-représentatifs
+dataset_to_seed(k,dataset,seed,T);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+printf("OBJETS DANS SEED \n\n");
+
+for (int i = 0; i<k ; i++){
+    affiche_objet(seed[i]);
+}
+
+printf("OBJETS DANS T \n\n");
+
+
+for (int i = 0; i< 50-k; i++){
+    affiche_objet(T[i]);
+}
+
+
+
+
+
+
+for (int i = 0; i<k ;i++){
+    printf("Distance entre %s et %s : %d\n", dataset[0].nom, seed[i].nom, d(dataset[0],seed[i]));
+}
 
 for (int i = 0; i < 50; i++){
     free(dataset[i].nom);
@@ -58,7 +91,7 @@ return 0;
 
 
 
-/*
+/*  Affiche tous les gens de Serpentard
 OBJET test = dataset[0];
 
 for (int i = 0; i < 50; i++){

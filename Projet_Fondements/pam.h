@@ -10,4 +10,5 @@ struct objet {
 typedef struct objet OBJET;
 
 
-int dataset_to_seed(int k, OBJET *dataset, OBJET *seed);
+int dataset_to_seed(int k, OBJET *dataset, OBJET *seed,OBJET *T);
+int tab_contains_int(int *tab, int n, int a);
