@@ -69,3 +69,34 @@ int d(OBJET a, OBJET b)
 
     return rep;
 }
+
+
+
+int initialise_M(int **M, OBJET *seed,int k, OBJET *T){
+
+    int distance = -1;
+    int min = 41;   // (la distance max entre deux objets est de 40)
+    //int indice = -1;
+
+    for (int i = 0; i < 50 - k; i++)
+    {
+        for (int j = 0; j < k; j++)
+        {
+
+            distance = d(seed[j], T[i]);
+            M[i][j] = distance;
+
+            if (distance < min)
+            {
+                min = distance;
+                M[i][k] = min;
+                M[i][k+1] = j;
+            }
+        }
+        min = 41;
+    }
+return 0;
+}
+
+
+int calcule_partition(int *M,int c){} // Calcule le coût global du cluster indice c
