@@ -1,7 +1,7 @@
 struct objet {
 	char *nom;
 	int courage;
-	int loyauté;
+	int loyaute;
 	int sagesse;
 	int malice;
 	char *maison;

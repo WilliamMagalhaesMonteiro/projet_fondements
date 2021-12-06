@@ -63,7 +63,7 @@ int d(OBJET a, OBJET b)
 
     int rep = 0;
     rep += abs(a.courage - b.courage);
-    rep += abs(a.loyauté - b.loyauté);
+    rep += abs(a.loyaute - b.loyaute);
     rep += abs(a.sagesse - b.sagesse);
     rep += abs(a.malice - b.malice);
 
@@ -99,4 +99,4 @@ return 0;
 }
 
 
-int calcule_partition(int *M,int c){} // Calcule le coût global du cluster indice c
+//int calcule_partition(int *M,int c){} // Calcule le coût global du cluster indice c

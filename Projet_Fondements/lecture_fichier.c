@@ -7,7 +7,7 @@ void affiche_objet(OBJET obj){	// Affiche tous les champs d'un objet
 
 	printf("obj.nom : %s\n", obj.nom);
 	printf("obj.courage : %d\n", obj.courage);
-	printf("obj.loyauté : %d\n", obj.loyauté);
+	printf("obj.loyaute : %d\n", obj.loyaute);
 	printf("obj.sagesse : %d\n", obj.sagesse);
 	printf("obj.malice : %d\n", obj.malice);
 	printf("obj.maison : %s\n", obj.maison);
@@ -46,7 +46,7 @@ OBJET ln_to_objet(char *ligne) // Prend une ligne de caractères et renvoie un o
 			break;
 
 			case 3 :
-				obj.loyauté = atoi(value);
+				obj.loyaute = atoi(value);
 			break;
 
 			case 4 :
