@@ -5,12 +5,6 @@
 #include <stdio.h>
 #define PATH "choixpeauMagique.csv"
 
-// Le but de l'algo est le suviant:
-
-// Calcul de la matrice de déprart:
-// On a K éléments représentatifs
-// On Calcule la distance d'un élément par ex Adrian à chacun des K éléments représentatif
-// On associe Adrian à l'élément dont il est le plus proche
 
 int main(int argc, char *argv[])
 {
@@ -38,19 +32,6 @@ int main(int argc, char *argv[])
     dataset_to_seed(k, dataset, seed, T);
 
 
-
-/*
-    printf("OBJETS DANS T \n\n");
-
-    for (int i = 0; i < 50 - k; i++)
-    {
-        affiche_objet(T[i]);
-    }
-
-    for (int i = 0; i < k; i++)
-    {
-        printf("Distance entre %s et %s : %d\n", dataset[0].nom, seed[i].nom, d(dataset[0],seed[i]));
-    }*/
 
     int **M = (int **)malloc((50 - k) * sizeof(int *));
     for (int i = 0; i < 50 - k; i++)
@@ -109,26 +90,6 @@ int main(int argc, char *argv[])
             }
         }
     }
-
-   // printf("OBJETS DANS SEED \n\n");
-
-    
-    
-    
-    
-    /*for (int i = 0; i < k; i++)
-    {
-        affiche_objet(seed[i]);
-    }*/
-
-    /*for (int i = 0; i < 50 - k; i++)
-    {
-        for (int j = 0; j < k + 2; j++)
-        {
-            printf("%d ", M[i][j]);
-        }
-        printf("\n");
-    }*/
 
 
     // /!\ SURTOUT NE PAS SUPPRIMER CI-DESSOUS /!\ -----------------------------------------------------------------------
