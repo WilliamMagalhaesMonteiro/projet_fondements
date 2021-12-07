@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include <time.h>
 
+ #include <sys/types.h>
+ #include <unistd.h>
+
 int abs(int a)
 { // renvoie la valeur absolue
     if (a <= 0)
@@ -29,7 +32,8 @@ int tab_contains_int(int *tab, int n, int a)
 
 int dataset_to_seed(int k, OBJET *dataset, OBJET *seed, OBJET *T)
 {
-    srandom(time(NULL));
+    srandom(getpid());
+    //srandom(time(NULL));
     // srandom(2);
     int *randoms = malloc(sizeof(int) * k); // Pour se rappeler des indices de seed pour les ignorer quand on contruit T
     int r;

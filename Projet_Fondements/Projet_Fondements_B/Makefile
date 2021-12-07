@@ -4,23 +4,14 @@ run: compil
 
 test:
 	./a.out 4
-	sleep 1s
 	./a.out 4
-	sleep 1s
 	./a.out 4
-	sleep 1s
 	./a.out 4
-	sleep 1s
 	./a.out 4
-	sleep 1s
 	./a.out 4
-	sleep 1s
 	./a.out 4
-	sleep 1s
 	./a.out 4
-	sleep 1s
 	./a.out 4
-	sleep 1s
 	
 compil: main.c lecture_fichier.c pam.c
 
