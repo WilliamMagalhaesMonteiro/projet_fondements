@@ -110,3 +110,36 @@ int file_to_objet(char *path, OBJET *dataset) // Prend le PATH du .csv et renvoi
 	return 0;
 }
 
+void affiche_clusters_noms(int **M, OBJET *seed, int k, OBJET *T)
+{
+
+    for (int i = 0; i < k; i++)
+    {
+        printf("----- DEBUT DU CLUSTER %d -----\n", i);
+        for (int j = 0; j < 50 - k; j++)
+        {
+            if (M[j][k+1] == i)
+            {
+                printf("%s\n",T[j].nom);
+            }
+        }
+        printf("----- FIN DU CLUSTER %d -----\n\n", i);
+    }
+}
+
+void affiche_clusters_all(int **M, OBJET *seed, int k, OBJET *T)
+{
+
+    for (int i = 0; i < k; i++)
+    {
+        printf("----- DEBUT DU CLUSTER %d -----\n", i);
+        for (int j = 0; j < 50 - k; j++)
+        {
+            if (M[j][k+1] == i)
+            {
+                affiche_objet(T[j]);
+            }
+        }
+        printf("----- FIN DU CLUSTER %d -----\n\n", i);
+    }
+}

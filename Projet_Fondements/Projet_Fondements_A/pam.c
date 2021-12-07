@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 int abs(int a)
-{ //renvoie la valeur absolue
+{ // renvoie la valeur absolue
     if (a <= 0)
     {
         return -a;
@@ -28,7 +28,7 @@ int tab_contains_int(int *tab, int n, int a)
 
 int dataset_to_seed(int k, OBJET *dataset, OBJET *seed, OBJET *T)
 {
-    //srandom(time(NULL));
+    // srandom(time(NULL));
     srandom(2);
     int *randoms = malloc(sizeof(int) * k); // Pour se rappeler des indices de seed pour les ignorer quand on contruit T
     int r;
@@ -70,13 +70,12 @@ int d(OBJET a, OBJET b)
     return rep;
 }
 
-
-
-int initialise_M(int **M, OBJET *seed,int k, OBJET *T){
+int initialise_M(int **M, OBJET *seed, int k, OBJET *T)
+{
 
     int distance = -1;
-    int min = 41;   // (la distance max entre deux objets est de 40)
-    //int indice = -1;
+    int min = 41; // (la distance max entre deux objets est de 40)
+    // int indice = -1;
 
     for (int i = 0; i < 50 - k; i++)
     {
@@ -90,13 +89,13 @@ int initialise_M(int **M, OBJET *seed,int k, OBJET *T){
             {
                 min = distance;
                 M[i][k] = min;
-                M[i][k+1] = j;
+                M[i][k + 1] = j;
             }
         }
         min = 41;
     }
-return 0;
+    return 0;
 }
 
+// int calcule_partition(int *M,int c){} // Calcule le coût global du cluster indice c
 
-//int calcule_partition(int *M,int c){} // Calcule le coût global du cluster indice c
